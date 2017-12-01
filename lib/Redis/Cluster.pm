@@ -611,7 +611,7 @@ sub _get_node_by_slot {
   my $node_cnt = @$range - 2 - $offset;
   $num = 1 + int(rand($node_cnt)) if $num < 1 || $num > $node_cnt;
 
-  return $self->_get_node(join(':', @{$range->[ 1 + $offset + $num ]}));
+  return $self->_get_node(join(':', @{$range->[ 1 + $offset + $num ]}[0..1]));
 }
 
 ####
