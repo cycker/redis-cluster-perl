@@ -589,7 +589,7 @@ sub _get_master_by_slot {
   my ($slot) = @_;
 
   my $range = $self->_get_range_by_slot($slot);
-  return $self->_get_node(join(':', @{$range->[2]}));
+  return $self->_get_node(join(':', @{$range->[2]}[0..1]));
 }
 
 ####
